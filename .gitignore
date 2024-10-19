@@ -1,0 +1,7 @@
+*.m4a
+*.wav
+*.png
+**/.DS_Store
+.idea/
+.venv/
+
