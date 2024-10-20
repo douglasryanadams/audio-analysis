@@ -5,10 +5,8 @@ import matplotlib.pyplot as plt
 from scipy.signal import decimate
 
 import log
+
 log.setup()
-
-
-
 
 logger.info("Loading file")
 waveform, sample_rate = librosa.load('sample.wav', duration=60)
@@ -22,7 +20,6 @@ db_amplitude = librosa.amplitude_to_db(decibels, ref=np.max)
 percentile_80 = np.percentile(db_amplitude, 80)
 logger.info(".. amplitude calculated")
 
-
 logger.info("Drawing graph")
 plt.figure(figsize=(20, 4))
 plt.plot(time, db_amplitude, color='#81D8D0', linewidth=0.5)
@@ -35,4 +32,3 @@ plt.tight_layout()
 plt.savefig("audio-visualized.png")
 
 logger.info(".. graph drawn")
-
